@@ -234,7 +234,7 @@
       </plugin>
     </gazebo>
   </xacro:macro>
-
+  
   <!-- Macro to add an IMU. -->
   <xacro:macro name="imu_plugin_macro"
     params="namespace imu_suffix parent_link imu_topic
