@@ -22,6 +22,8 @@
     <arg name="verbose" value="$(arg verbose)"/>
   </include>
 
+  <node name="mavlink_interface" pkg="mavlink_interface" type="mavlink_interface_node" output="screen"/>
+
   <group ns="$(arg mav_name)">
     <include file="$(find rotors_gazebo)/launch/spawn_mav.launch">
       <arg name="mav_name" value="$(arg mav_name)" />
