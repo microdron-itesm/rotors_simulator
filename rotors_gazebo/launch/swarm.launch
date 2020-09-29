@@ -24,6 +24,10 @@
 
   <node name="mavlink_interface" pkg="mavlink_interface" type="mavlink_interface_node" output="screen"/>
 
+  <node name="distance_calculator" pkg="distance_calculator" type="distance_calculator_node" output="screen">
+    <rosparam param="tracked_models"> ["ardrone", "gs1", "gs2", "gs3", "gs4", "gs5"]</rosparam>
+  </node>
+
   <group ns="$(arg mav_name)">
     <include file="$(find rotors_gazebo)/launch/spawn_mav.launch">
       <arg name="namespace" value="$(arg mav_name)"/>
