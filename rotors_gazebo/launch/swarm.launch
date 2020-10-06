@@ -22,8 +22,6 @@
     <arg name="verbose" value="$(arg verbose)"/>
   </include>
 
-  <node name="mavlink_interface" pkg="mavlink_interface" type="mavlink_interface_node" output="screen"/>
-
   <node name="distance_calculator" pkg="distance_calculator" type="distance_calculator_node" output="screen">
     <rosparam param="tracked_models"> ["ardrone", "gs1", "gs2", "gs3", "gs4", "gs5"]</rosparam>
   </node>
@@ -37,6 +35,11 @@
       <arg name="enable_ground_truth" value="$(arg enable_ground_truth)" />
       <arg name="log_file" value="$(arg log_file)"/>
     </include>
+
+    <node name="mavlink_interface" pkg="mavlink_interface" type="mavlink_interface_node" output="screen">
+      <rosparam param="send_port">15000</rosparam>
+      <rosparam param="recv_port">15001</rosparam>
+    </node>
   </group>
   
   <group ns="gs1">
@@ -50,6 +53,12 @@
       <arg name="x" value="4.0"/>
       <arg name="y" value="0.0"/>
     </include>
+
+    <node name="mavlink_interface" pkg="mavlink_interface" type="mavlink_interface_node" output="screen">
+      <rosparam param="mav_name">"gs1"</rosparam>
+      <rosparam param="send_port">15002</rosparam>
+      <rosparam param="recv_port">15003</rosparam>
+    </node>
   </group>
 
   <group ns="gs2">
@@ -63,6 +72,12 @@
       <arg name="x" value="0.0"/>
       <arg name="y" value="4.0"/>
     </include>
+
+    <node name="mavlink_interface" pkg="mavlink_interface" type="mavlink_interface_node" output="screen">
+      <rosparam param="mav_name">"gs2"</rosparam>
+      <rosparam param="send_port">15004</rosparam>
+      <rosparam param="recv_port">15005</rosparam>
+    </node>
   </group>
 
     <group ns="gs3">
@@ -76,6 +91,12 @@
       <arg name="x" value="4.0"/>
       <arg name="y" value="4.0"/>
     </include>
+
+      <node name="mavlink_interface" pkg="mavlink_interface" type="mavlink_interface_node" output="screen">
+        <rosparam param="mav_name">"gs3"</rosparam>
+        <rosparam param="send_port">15006</rosparam>
+        <rosparam param="recv_port">15007</rosparam>
+      </node>
   </group>
 
   <group ns="gs4">
@@ -89,6 +110,12 @@
       <arg name="x" value="-4.0"/>
       <arg name="y" value="0.0"/>
     </include>
+
+    <node name="mavlink_interface" pkg="mavlink_interface" type="mavlink_interface_node" output="screen">
+      <rosparam param="mav_name">"gs4"</rosparam>
+      <rosparam param="send_port">15008</rosparam>
+      <rosparam param="recv_port">15009</rosparam>
+    </node>
   </group>
   <group ns="gs5">
     <include file="$(find rotors_gazebo)/launch/spawn_mav.launch">
@@ -101,5 +128,11 @@
       <arg name="x" value="-4.0"/>
       <arg name="y" value="4.0"/>
     </include>
+
+    <node name="mavlink_interface" pkg="mavlink_interface" type="mavlink_interface_node" output="screen">
+      <rosparam param="mav_name">"gs5"</rosparam>
+      <rosparam param="send_port">15010</rosparam>
+      <rosparam param="recv_port">15011</rosparam>
+    </node>
   </group>
 </launch>
