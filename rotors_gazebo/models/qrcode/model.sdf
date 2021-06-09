@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdf version="1.4">
+   <model name="qrcode">
+      <static>true</static>
+      <pose>2 0 1 1.6 1.55 4.712</pose>
+      <link name="link">
+         <visual name="visual">
+            <cast_shadows>false</cast_shadows>
+            <geometry>
+               <plane>
+                  <normal>0 0 1</normal>
+                  <size>2 2</size>
+               </plane>
+            </geometry>
+            <material>
+               <script>
+                  <uri>model://qrcode/materials/scripts</uri>
+                  <uri>model://qrcode/materials/textures/</uri>
+                  <name>qrcode/Image</name>
+               </script>
+            </material>
+         </visual>
+      </link>
+   </model>
+</sdf>
